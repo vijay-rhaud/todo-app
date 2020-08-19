@@ -3,9 +3,9 @@ node_modules/
 dist/
 npm-debug.log
 yarn-error.log
-.gitignore
-.editorconfig
-.babelrc
+gitignore
+editorconfig
+babelrc
 
 # Editor directories and files
 .idea
