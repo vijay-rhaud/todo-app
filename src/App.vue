@@ -1,40 +1,43 @@
 <template>
   <div class="d-flex">
-    <div class="header">
-      <h1>Todo Application</h1>
-    </div>
-    <div class="d-flex user-input-section ">
-      <label for="todo"><p>Enter something to do!</p></label>
-      <input type="text" class="user-input" v-model="userInput">
-      <button class="button" @click="pushUserInput">Add to List</button>
-    </div>
-    <div class="todo-list">
-      <ol>
-        <li v-for="items in todoList" :key="items"><p>{{ items }}</p></li>
-      </ol>
-    </div>
+    <!------ Header ------>
+    <app-header></app-header>
+
+    <!------ User Input ------>
+    <app-user-input @addNewTaskToList="pushUserInput"></app-user-input>
+
+    <!------ Todo List ------>
+    <app-todo-list :todoList="todoList"></app-todo-list>
   </div>
 </template>
 <script>
+  import Header from './components/Header.vue';
+  import UserInput from './components/UserInput.vue';
+  import TodoList from './components/TodoList.vue';
+
   export default {
     data() {
       return {
-        todoList: ['Get Money', 'Get Paid', 'Buy a Scirocco'],
-        userInput: '',
+        todoList: [
+          'Learn Vue', 
+          'Make Todo List App', 
+          'Learn Laravel'
+        ],
         maxTasks: 10,
       }
     },
     methods: {
-      pushUserInput() {
-        if(this.todoList.length >= this.maxTasks) {
-            return alert("You're not capable of doing more than 10 tasks at a time!");
+      pushUserInput(newTask) {
+        if (this.todoList.length >= this.maxTasks) {
+            return alert("You're not able to do more than 10 tasks at a time!");
         }
-        if(this.userInput == '') {
-          return alert("Please enter in a task!");
-        }
-        this.todoList.push(this.userInput);
-        this.userInput = '';
+        this.todoList.push(newTask);
       }
+    },
+    components: {
+      appHeader: Header,
+      appUserInput: UserInput,
+      appTodoList: TodoList
     }
   }
 </script>
@@ -64,29 +67,5 @@ h1, h2, h3, h4, h5, h6, p, ol, li, a {
 .button:focus {
   border-radius: 0px;
   outline: 4px solid #000;
-}
-/** Header Section Styles **/
-.header {
-  width: 100%;
-
-}
-.header h1{
-  text-align: center;
-  font-size: 48px;
-  color: #0353a4;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
-/** User Input Section Styles **/
-.d-flex .user-input-section {
-  margin-bottom: 40px;
-}
-.user-input {
-  width: 400px;
-  height: 24px;
-}
-/** Todo List Section Styles **/
-.todo-list {
-  color: #023e7d;
 }
 </style>
