@@ -25,8 +25,8 @@
         <input style="width: 100%;margin: 20px 0;">
     </div>
     <div style="display: flex; justify-content: flex-end; width:20%; padding-right: 12px;">
-        <button style="width: 100%;margin: 20px 0;">Edit</button>
-        <button style="width: 100%;margin: 20px 0;">Delete</button>
+        <button style="width: 100%;margin: 20px 0;"><i class="fas fa-edit"></button>
+        <button style="width: 100%;margin: 20px 0;"><i class="fas fa-trash-alt"></button>
     </div>
 </div>
 
