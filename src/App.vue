@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex">
+  <div class="todo-app d-flex">
     <!------ Header ------>
     <app-header></app-header>
 
@@ -7,7 +7,7 @@
     <app-user-input @addNewTaskToList="pushUserInput"></app-user-input>
 
     <!------ Todo List ------>
-    <app-todo-list :todoList="todoList"></app-todo-list>
+    <app-todo-list :todoList="todoList" @deleteTask="deleteTaskFromArray"></app-todo-list>
   </div>
 </template>
 <script>
@@ -32,6 +32,9 @@
             return alert("You're not able to do more than 10 tasks at a time!");
         }
         this.todoList.push(newTask);
+      },
+      deleteTaskFromArray(index) {
+        this.todoList.splice(index, 1);
       }
     },
     components: {
@@ -67,5 +70,11 @@ h1, h2, h3, h4, h5, h6, p, ol, li, a {
 .button:focus {
   border-radius: 0px;
   outline: 4px solid #000;
+}
+.todo-app {
+  border: 8px solid #0353a4;
+  border-radius: 4px;
+  width: 50%;
+  margin: auto;
 }
 </style>

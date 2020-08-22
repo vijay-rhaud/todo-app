@@ -1,8 +1,8 @@
 <template>
-    <div class="d-flex user-input-section ">
+    <div class="user-input-section d-flex">
         <label><p>Enter something to do!</p></label>
         <input type="text" class="user-input" v-model="newTask" @keyup.enter="pushNewTask()">
-        <button class="button" @click="pushNewTask">Add to List</button>
+        <button class="button" @click="pushNewTask()">Add to List</button>
     </div>
 </template>
 
