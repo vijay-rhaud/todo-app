@@ -1,7 +1,9 @@
 <template>
     <div class="list-items d-flex">
-        <div class="list-item" v-for="(items, index) in todoList" :key="items">
-            <textarea 
+
+
+        <!-- <div class="list-item" v-for="(items, index) in todoList" :key="items">
+            <input 
                 class="item"
                 :class="{active: isActive}"
                 type="text"
@@ -10,25 +12,19 @@
                 :disabled="inputIsDisable"
                 @keyup.enter="updateTask(items, index)"
             >
-            </textarea>
             <button class="button-edit" @click="editTask()"><i class="fas fa-edit"></i></button>
             <button class="button-delete" @click="deleteTask(index)"><i class="fas fa-trash-alt"></i></button>
+        </div> -->
+
+
+
+        <div >
+            <input type="checkbox">
+            <input style="width: 400px;height: 24px;">
+            <button><i class="fas fa-edit"></i></button>
+            <button><i class="fas fa-trash-alt"></i></button>            
         </div>
-
-
-
-<div style="display: flex; width: 100%;">
-    <div style="width: 10%;">
-        <input style="width: 100%;margin: 20px 0;" type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-    </div>
-    <div style="width: 70%; padding: 0 12px;">
-        <input style="width: 100%;margin: 20px 0;">
-    </div>
-    <div style="display: flex; justify-content: flex-end; width:20%; padding-right: 12px;">
-        <button style="width: 100%;margin: 20px 0;">Edit</button>
-        <button style="width: 100%;margin: 20px 0;">Delete</button>
-    </div>
-</div>
+   
 
 
 

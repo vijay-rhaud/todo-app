@@ -57,13 +57,10 @@ h1, h2, h3, h4, h5, h6, p, ol, li, a {
   width: 100%;
 }
 .button {
-  margin-top: 24px;
   background-color: #0353a4;
   border: 0px none transparent;
   border-radius: 8px;
   color: #fff;
-  width: 240px;
-  height: 40px;
   font-family: 'Poppins', 'sans-serif';
   font-size: 16px;
 }
@@ -73,8 +70,9 @@ h1, h2, h3, h4, h5, h6, p, ol, li, a {
 }
 .todo-app {
   border: 8px solid #0353a4;
-  border-radius: 4px;
-  width: 50%;
+  border-radius: 25px;
+  width: 60%;
   margin: auto;
+  padding-bottom: 120px;
 }
 </style>
