@@ -8,6 +8,10 @@
 
     <!------ Todo List ------>
     <app-todo-list :todoList="todoList" @deleteTask="deleteTaskFromArray"></app-todo-list>
+
+    <button @click="test()">Test Button</button>
+    {{todoList}}
+
   </div>
 </template>
 <script>
@@ -19,9 +23,9 @@
     data() {
       return {
         todoList: [
-          'Learn Vue', 
-          'Make Todo List App', 
-          'Learn Laravel'
+          {task: 'Learn Vue.js', isComplete: false},
+          {task: 'Make Todo App', isComplete: false},
+          {task: 'Learn Laravel', isComplete: false}
         ],
         maxTasks: 10,
       }
@@ -31,10 +35,13 @@
         if (this.todoList.length >= this.maxTasks) {
             return alert("You're not able to do more than 10 tasks at a time!");
         }
-        this.todoList.push(newTask);
+        this.todoList.push({task: newTask, isComplete: false});
       },
       deleteTaskFromArray(index) {
         this.todoList.splice(index, 1);
+      },
+      test() {
+        console.log(this.todoList)
       }
     },
     components: {

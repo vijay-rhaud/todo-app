@@ -5,17 +5,27 @@
             <li v-for="items in todoList" :key="items"><p>{{ items }}</p></li>
         </ol> -->
 
-        <div class="list-item" v-for="(items, index) in todoList" :key="items">
+        <!--- 
+            REMEMBER THE FOLLOWING:
+                . $event.target.value
+                . $emit
+                . @change
+                . @input 
+        -->
+
+        <!-- <div class="list-item" v-for="(items, index) in todoList" :key="items">
 
             <div class="list-input-section">
 
                 <input
                     class="list-checkbox"                
                     type="checkbox"
+                    @click="taskCompleted = !taskCompleted"
                 >
 
                 <input
-                    class="list-input"                
+                    class="list-input"
+                    :class="completedTask()"
                     type="text"
                     :id="index"
                     :value="items"
@@ -23,17 +33,8 @@
                     @keyup.enter="updateTask(items, index)"
                 >
 
-                <!--- 
-                    REMEMBER THE FOLLOWING:
-                        . $event.target.value
-                        . $emit
-                        . @change
-                        . @input 
-                -->
-
             </div>
             
-
             <div class="list-button-section">
 
                 <button class="button edit" @click="editTask(index);"><i class="fas fa-edit"></i></button>
@@ -42,10 +43,13 @@
 
             </div>
 
+        </div> -->
+        
 
-        </div>
 
-
+        <ol >
+            <li v-for="item in todoList" :key="item" > {{item.task}}</li>
+        </ol>
 
 
 
@@ -56,7 +60,8 @@
 export default {
     data() {
         return {
-            activeIndex: ''
+            activeIndex: '',
+            taskCompleted: false
         }
     },
     props: ['todoList'],
@@ -73,6 +78,11 @@ export default {
         },
         saveTask() {
             this.activeIndex = ''
+        },
+        completedTask() {
+            return {
+                'taskCompleted' : this.taskCompleted
+            }
         }
     }
 }
@@ -102,9 +112,8 @@ export default {
     font-family: 'Poppins', 'sans-serif';
     padding-left: 12px;
 }
-input[type="checkbox"] {
-    border: 10px solid red;
-    background-color: red;
+.taskCompleted {
+    text-decoration: line-through;
 }
 .list-button-section {
     width: 30%;
