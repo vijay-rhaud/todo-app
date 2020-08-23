@@ -1,15 +1,8 @@
 <template>
     <div class="header">
         <h1>Todo Application</h1>
-        {{title}}
     </div>
 </template>
-
-<script>
-export default {
-  props: ['title']
-}
-</script>
 
 <style scoped>
 .header {

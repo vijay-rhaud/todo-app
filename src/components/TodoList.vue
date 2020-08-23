@@ -1,30 +1,49 @@
 <template>
     <div class="list-items d-flex">
 
+        <!-- <ol style="border-bottom: 1px solid red;">
+            <li v-for="items in todoList" :key="items"><p>{{ items }}</p></li>
+        </ol> -->
 
-        <!-- <div class="list-item" v-for="(items, index) in todoList" :key="items">
-            <input 
-                class="item"
-                :class="{active: isActive}"
-                type="text"
-                :id='index'
-                :value="items"
-                :disabled="inputIsDisable"
-                @keyup.enter="updateTask(items, index)"
-            >
-            <button class="button-edit" @click="editTask()"><i class="fas fa-edit"></i></button>
-            <button class="button-delete" @click="deleteTask(index)"><i class="fas fa-trash-alt"></i></button>
-        </div> -->
+        <div class="list-item" v-for="(items, index) in todoList" :key="items">
+
+            <div class="list-input-section">
+
+                <input
+                    class="list-checkbox"                
+                    type="checkbox"
+                >
+
+                <input
+                    class="list-input"                
+                    type="text"
+                    :id="index"
+                    :value="items"
+                    :disabled="activeIndex !== index"
+                    @keyup.enter="updateTask(items, index)"
+                >
+
+                <!--- 
+                    REMEMBER THE FOLLOWING:
+                        . $event.target.value
+                        . $emit
+                        . @change
+                        . @input 
+                -->
+
+            </div>
+            
+
+            <div class="list-button-section">
+
+                <button class="button edit" @click="editTask(index);"><i class="fas fa-edit"></i></button>
+                <button class="button save" @click="saveTask()"><i class="fas fa-edit"></i></button>
+                <button class="button delete" @click="deleteTask(index)"><i class="fas fa-times"></i></button>
+
+            </div>
 
 
-
-        <div >
-            <input type="checkbox">
-            <input style="width: 400px;height: 24px;">
-            <button><i class="fas fa-edit"></i></button>
-            <button><i class="fas fa-trash-alt"></i></button>            
         </div>
-   
 
 
 
@@ -37,19 +56,23 @@
 export default {
     data() {
         return {
-            inputIsDisable: true
+            activeIndex: ''
         }
     },
     props: ['todoList'],
     methods: {
-        editTask() {
-            this.inputIsDisable = !this.inputIsDisable;
+        editTask(index) {
+            this.activeIndex = index;
         },
         updateTask(items, index) {                  
             this.todoList.splice(index, 1, event.target.value);
+            this.activeIndex = '';
         },
         deleteTask(index) {
             this.$emit('deleteTask', index);            
+        },
+        saveTask() {
+            this.activeIndex = ''
         }
     }
 }
@@ -57,44 +80,54 @@ export default {
 
 <style scoped>
 .list-items {
-
+    padding-bottom: 80px;
 }
 .list-item {
-    background-color: #fff;
-    padding: 20px 8px;
-    border-bottom: 2px solid #eee;
+    display: flex;    
     width: 100%;
+    margin-bottom: 32px;
 }
-.list-item:first-child {
-    border-top: 2px solid #eee;
+.list-input-section {
+    display: flex; 
+    justify-content: space-evenly;
+    align-items: center;
+    padding-left: 20px;
+    width: 100%; 
+    max-width: 70%; 
 }
-.item {
-    background-color: transparent;
-    border: 1px solid transparent;
-    color: #0353a4;
+.list-input {
+    width: 100%;
+    max-width: 90%;
+    font-size: 20px;
     font-family: 'Poppins', 'sans-serif';
-    font-size: 16px;
+    padding-left: 12px;
 }
-.button-edit {
+input[type="checkbox"] {
+    border: 10px solid red;
+    background-color: red;
+}
+.list-button-section {
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly; 
+    padding-right: 20px;
+}
+.edit {
     background-color: #28a745;
-    color: #fff;
-    border: none;
-    font-size: 12px;
-    padding: 8px;
-    border-radius: 4px;;
 }
-.button-edit:hover {
+.edit:hover {
     background-color: #218838;
 }
-.button-delete {
-    background-color: #dc3545;
-    color: #fff;
-    border: none;
-    font-size: 12px;
-    padding: 8px;
-    border-radius: 4px;;
+.save {
+    background-color: #ffc107;
 }
-.button-delete:hover {
+.save:hover {
+    background-color: #e0a800;
+}
+.delete {
+    background-color: #dc3545;
+}
+.delete:hover {
     background-color: #c82333;
 }
 </style>

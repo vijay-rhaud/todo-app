@@ -1,5 +1,5 @@
 <template>
-    <div class="user-input-section">
+    <div class="user-input-section d-flex">
         <input 
             placeholder="Enter something to do!" 
             type="text" 
@@ -7,7 +7,7 @@
             v-model="newTask" 
             @keyup.enter="pushNewTask()"
         >
-        <button class="" @click="pushNewTask()"><i class="fas fa-plus"></i></button>
+        <button class="button add" @click="pushNewTask()"><i class="fas fa-plus"></i></button>
     </div>
 </template>
 
@@ -33,10 +33,26 @@ export default {
 
 <style scoped>
 .d-flex .user-input-section {
-    margin-bottom: 40px;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 60px;
 }
 .user-input {
     width: 400px;
-    height: 24px;
+    height: 32px;
+    margin-right: 16px;
+    padding: 0;
+}
+.user-input::placeholder {
+    font-size: 16px;
+    color: #000;
+    font-family: 'Poppins', 'sans-serif';
+    text-align: center;
+}
+.add {
+    background-color: #0466c8;
+}
+.add:hover {
+    background-color: #0353a4;
 }
 </style>

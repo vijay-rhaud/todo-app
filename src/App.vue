@@ -56,23 +56,22 @@ h1, h2, h3, h4, h5, h6, p, ol, li, a {
   align-items: center;
   width: 100%;
 }
-.button {
-  background-color: #0353a4;
-  border: 0px none transparent;
-  border-radius: 8px;
-  color: #fff;
-  font-family: 'Poppins', 'sans-serif';
-  font-size: 16px;
-}
-.button:focus {
-  border-radius: 0px;
-  outline: 4px solid #000;
-}
 .todo-app {
   border: 8px solid #0353a4;
   border-radius: 25px;
   width: 60%;
-  margin: auto;
+  margin: 120px auto;
   padding-bottom: 120px;
+}
+.button {
+  border: 0 none transparent;
+  padding: 8px 12px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+}
+.button:hover {
+  transition: 0.1s;
 }
 </style>
