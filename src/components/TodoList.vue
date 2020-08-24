@@ -46,9 +46,21 @@
         </div> -->
         
 
+                <!-- :class="{red: taskCompleted} " -->
 
         <ol >
-            <li v-for="item in todoList" :key="item" > {{item.task}}</li>
+            <li 
+                v-for="(task, index) in todoList" :key="index"
+                :class="{red: taskCompleted} "                
+            >
+
+                {{task.description}}
+                -----------------
+                {{task.isComplete}}
+                -----------------
+                <button @click="completeTask(task, index)">Complete Task</button>
+
+            </li>
         </ol>
 
 
@@ -83,7 +95,26 @@ export default {
             return {
                 'taskCompleted' : this.taskCompleted
             }
+        },
+
+
+
+
+
+
+        completeTask(task, index) {
+            task.isComplete = !task.isComplete;
+            console.log(index);
+            console.log(task.description);
+            console.log(task.isComplete);
         }
+
+
+
+
+
+
+
     }
 }
 </script>
@@ -112,7 +143,7 @@ export default {
     font-family: 'Poppins', 'sans-serif';
     padding-left: 12px;
 }
-.taskCompleted {
+.task-is-completed {
     text-decoration: line-through;
 }
 .list-button-section {
@@ -139,4 +170,10 @@ export default {
 .delete:hover {
     background-color: #c82333;
 }
+
+
+.red {
+    background-color: red;
+}
+
 </style>

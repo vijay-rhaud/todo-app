@@ -1,16 +1,11 @@
 <template>
   <div class="todo-app d-flex">
-    <!------ Header ------>
+
     <app-header></app-header>
 
-    <!------ User Input ------>
     <app-user-input @addNewTaskToList="pushUserInput"></app-user-input>
 
-    <!------ Todo List ------>
     <app-todo-list :todoList="todoList" @deleteTask="deleteTaskFromArray"></app-todo-list>
-
-    <button @click="test()">Test Button</button>
-    {{todoList}}
 
   </div>
 </template>
@@ -23,9 +18,9 @@
     data() {
       return {
         todoList: [
-          {task: 'Learn Vue.js', isComplete: false},
-          {task: 'Make Todo App', isComplete: false},
-          {task: 'Learn Laravel', isComplete: false}
+          {description: 'Learn Vue.js', isComplete: false},
+          {description: 'Make Todo App', isComplete: false},
+          {description: 'Learn Laravel', isComplete: false}
         ],
         maxTasks: 10,
       }
@@ -35,7 +30,7 @@
         if (this.todoList.length >= this.maxTasks) {
             return alert("You're not able to do more than 10 tasks at a time!");
         }
-        this.todoList.push({task: newTask, isComplete: false});
+        this.todoList.push({description: newTask, isComplete: false});
       },
       deleteTaskFromArray(index) {
         this.todoList.splice(index, 1);
