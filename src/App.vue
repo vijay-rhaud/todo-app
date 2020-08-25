@@ -1,7 +1,10 @@
 <template>
   <div class="todo-app d-flex">
     <app-header></app-header>
-    <app-user-input @addNewTaskToList="pushUserInput"></app-user-input>
+    <app-user-input 
+      @addNewTaskToList="pushUserInput"
+    >
+    </app-user-input>
     <app-todo-list 
       :todoList="todoList"
       @updateTask="updateTaskInArray"
