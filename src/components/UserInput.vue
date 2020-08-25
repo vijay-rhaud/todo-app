@@ -42,10 +42,14 @@ export default {
     height: 32px;
     margin-right: 16px;
     padding: 0;
+    text-align: center;
+    font-size: 16px;
+    color: #000;
+    font-family: 'Poppins', 'sans-serif';
 }
 .user-input::placeholder {
     font-size: 16px;
-    color: #000;
+    color: #999;
     font-family: 'Poppins', 'sans-serif';
     text-align: center;
 }

@@ -19,7 +19,10 @@
     data() {
       return {
         todoList: [
-          {description: 'Make a Todo List Application', isComplete: false},
+          {description: 'Learn Vue.js', isComplete: false},
+          {description: 'Make Todo List Application', isComplete: false},
+          {description: 'Learn Laravel', isComplete: false},
+
         ],
         maxTasks: 10,
       }
