@@ -1,10 +1,10 @@
 <template>
   <div class="todo-app d-flex">
     <app-header></app-header>
-    <app-user-input 
+    <app-add-task 
       @addNewTaskToList="pushUserInput"
     >
-    </app-user-input>
+    </app-add-task>
     <app-todo-list 
       :todoList="todoList"
       @updateTask="updateTaskInArray"
@@ -16,7 +16,7 @@
 </template>
 <script>
   import Header from './components/Header.vue';
-  import UserInput from './components/UserInput.vue';
+  import AddTask from './components/AddTask.vue';
   import TodoList from './components/TodoList.vue';
   export default {
     data() {
@@ -49,7 +49,7 @@
     },
     components: {
       appHeader: Header,
-      appUserInput: UserInput,
+      appAddTask: AddTask,
       appTodoList: TodoList
     }
   }

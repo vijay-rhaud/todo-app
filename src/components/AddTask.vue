@@ -1,13 +1,18 @@
 <template>
-    <div class="user-input-section d-flex">
+    <div class="add-task-section d-flex">
         <input 
-            placeholder="Enter something to do!" 
+            placeholder="Enter a task here!" 
             type="text" 
-            class="user-input" 
+            class="add-task" 
             v-model="newTask" 
             @keyup.enter="pushNewTask()"
         >
-        <button class="button add" @click="pushNewTask()"><i class="fas fa-plus"></i></button>
+        <button 
+            class="button add" 
+            @click="pushNewTask()"
+        >
+            <i class="fas fa-plus"></i>
+        </button>
     </div>
 </template>
 
@@ -32,5 +37,5 @@ export default {
 </script>
 
 <style scoped>
-    @import '../assets/styles/user-input.css';
+    @import '../assets/styles/add-task.css';
 </style>
