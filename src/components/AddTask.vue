@@ -1,15 +1,15 @@
 <template>
     <div class="add-task-section d-flex">
-        <input 
-            placeholder="Enter a task here!" 
-            type="text" 
-            class="add-task" 
-            v-model="newTask" 
+        <input
+            placeholder="Enter a task here!"
+            type="text"
+            class="add-task"
+            v-model="newTask"
             @keyup.enter="addNewTask()"
             maxlength="300"
         >
-        <button 
-            class="button add" 
+        <button
+            class="button add"
             @click="addNewTask()"
         >
             <i class="fas fa-plus"></i>
