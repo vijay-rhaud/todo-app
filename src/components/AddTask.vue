@@ -6,6 +6,7 @@
             class="add-task" 
             v-model="newTask" 
             @keyup.enter="addNewTask()"
+            maxlength="300"
         >
         <button 
             class="button add" 

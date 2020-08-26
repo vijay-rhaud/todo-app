@@ -34,6 +34,7 @@
                         :value="task.description"
                         @input="updateTask(index, task)"
                         @keyup.enter="editTask()"
+                        maxlength="300"
                     >
                 </div>
                 <div class="task-save-button">
