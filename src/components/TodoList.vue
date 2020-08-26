@@ -1,5 +1,5 @@
 <template>
-    <div class="list-items d-flex">
+    <div class="task-list d-flex">
         <div class="task" v-for="(task, index) in todoList" :key="index">
             <div class="task-view" v-if="editing !== index">
                 <div class="task-checkbox">
