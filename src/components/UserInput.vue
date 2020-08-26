@@ -32,31 +32,5 @@ export default {
 </script>
 
 <style scoped>
-.d-flex .user-input-section {
-    flex-direction: row;
-    width: 100%;
-    margin-bottom: 60px;
-}
-.user-input {
-    width: 400px;
-    height: 32px;
-    margin-right: 16px;
-    padding: 0;
-    text-align: center;
-    font-size: 16px;
-    color: #000;
-    font-family: 'Poppins', 'sans-serif';
-}
-.user-input::placeholder {
-    font-size: 16px;
-    color: #999;
-    font-family: 'Poppins', 'sans-serif';
-    text-align: center;
-}
-.add {
-    background-color: #0466c8;
-}
-.add:hover {
-    background-color: #0353a4;
-}
+    @import '../assets/styles/user-input.css';
 </style>
