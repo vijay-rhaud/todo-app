@@ -58,9 +58,6 @@ export default {
         updateTask(index, task) {
             this.$emit('updateTask', index, task);
         },
-        saveTask() {
-            this.activeIndex = ''
-        },
         completeTask(index, task) {
             this.$emit('completeTask', index, task);
         },
