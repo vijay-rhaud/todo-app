@@ -5,11 +5,11 @@
             type="text" 
             class="add-task" 
             v-model="newTask" 
-            @keyup.enter="pushNewTask()"
+            @keyup.enter="addNewTask()"
         >
         <button 
             class="button add" 
-            @click="pushNewTask()"
+            @click="addNewTask()"
         >
             <i class="fas fa-plus"></i>
         </button>
@@ -24,7 +24,7 @@ export default {
         }
     },
     methods: {
-        pushNewTask() {
+        addNewTask() {
             if (this.newTask == '') {
                 return alert("Please enter in a task!");
             } else {
