@@ -2,14 +2,14 @@
   <div class="todo-app d-flex">
     <app-header></app-header>
     <app-add-task 
-      @addNewTaskToList="pushUserInput"
+      @addTask="addTask"
     >
     </app-add-task>
     <app-todo-list 
       :todoList="todoList"
-      @updateTask="updateTaskInArray"
-      @deleteTask="deleteTaskFromArray"
-      @completeTask="completeTaskInArray"
+      @updateTask="updateTask"
+      @deleteTask="deleteTask"
+      @completeTask="completeTask"
     >
     </app-todo-list>
   </div>
@@ -31,19 +31,19 @@
       }
     },
     methods: {
-      pushUserInput(newTask) {
+      addTask(newTask) {
         if (this.todoList.length >= this.maxTasks) {
           return alert("You're not able to do more than 10 tasks at a time!");
         }
         this.todoList.push({description: newTask, isComplete: false});
       },
-      updateTaskInArray(index, task) {
+      updateTask(index, task) {
         this.todoList.splice(index, 1, {description: event.target.value, isComplete: false});
       },
-      completeTaskInArray(index, task) {
+      completeTask(index, task) {
         this.todoList[index].isComplete = !this.todoList[index].isComplete
       },      
-      deleteTaskFromArray(index) {
+      deleteTask(index) {
         this.todoList.splice(index, 1);
       }
     },

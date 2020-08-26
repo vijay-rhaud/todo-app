@@ -28,7 +28,7 @@ export default {
             if (this.newTask == '') {
                 return alert("Please enter in a task!");
             } else {
-                this.$emit('addNewTaskToList', this.newTask);
+                this.$emit('addTask', this.newTask);
                 this.newTask = '';
             }
         }
