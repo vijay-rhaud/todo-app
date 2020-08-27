@@ -5,5 +5,5 @@
 </template>
 
 <style scoped>
-  @import '../assets/styles/header.css';
+  @import './header.css';
 </style>

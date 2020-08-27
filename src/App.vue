@@ -12,9 +12,9 @@
   </div>
 </template>
 <script>
-  import Header from './components/Header.vue';
-  import NewTaskInput from './components/NewTaskInput.vue';
-  import TodoList from './components/TodoList.vue';
+  import Header from './components/Header/Header.vue';
+  import NewTaskInput from './components/NewTaskInput/NewTaskInput.vue';
+  import TodoList from './components/TodoList/TodoList.vue';
 
   export default {
     data() {
@@ -23,7 +23,6 @@
           {description: 'Learn Vue.js', isComplete: false},
           {description: 'Make Todo List Application', isComplete: false},
           {description: 'Learn Laravel', isComplete: false},
-
         ],
         maxTasks: 10,
       }

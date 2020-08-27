@@ -73,5 +73,5 @@ export default {
 </script>
 
 <style scoped>
-    @import '../assets/styles/todo-list.css';
+    @import './todo-list.css';
 </style>

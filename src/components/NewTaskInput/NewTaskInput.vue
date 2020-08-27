@@ -38,5 +38,5 @@ export default {
 </script>
 
 <style scoped>
-    @import '../assets/styles/new-task-input.css';
+    @import './new-task-input.css';
 </style>
