@@ -1,10 +1,7 @@
 <template>
   <div class="todo-app d-flex">
     <app-header></app-header>
-    <app-add-task 
-      @addTask="addTask"
-    >
-    </app-add-task>
+    <app-new-task-input @addTask="addTask"></app-new-task-input>
     <app-todo-list 
       :todoList="todoList"
       @updateTask="updateTask"
@@ -16,7 +13,7 @@
 </template>
 <script>
   import Header from './components/Header.vue';
-  import AddTask from './components/AddTask.vue';
+  import NewTaskInput from './components/NewTaskInput.vue';
   import TodoList from './components/TodoList.vue';
 
   export default {
@@ -50,7 +47,7 @@
     },
     components: {
       appHeader: Header,
-      appAddTask: AddTask,
+      appNewTaskInput: NewTaskInput,
       appTodoList: TodoList
     }
   }
