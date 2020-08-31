@@ -1,0 +1,74 @@
+.task {
+    width: 100%;
+    border-bottom: 1px solid #999;
+}
+.task:first-child {
+    border-top: 1px solid #999;
+}
+.task-view {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.task-checkbox {
+    width: 10%;
+    margin-left: 24px;
+}
+.task-description {
+    width: 80%;
+}
+.description {
+    word-wrap: break-word;
+    font-size: 20px;
+}
+.task-delete {
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 24px; 
+}
+.task-edit {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 17px 0;
+}
+.task-edit-input {
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 40px;
+}
+.task-input {
+    width: 100%;
+    max-width: 90%;
+    font-size: 20px;
+    font-family: 'Poppins', 'sans-serif';
+}    
+.task-save-button {
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 24px; 
+}
+.task-is-completed {
+    text-decoration: line-through;
+}
+.save {
+    background-color: #28a745;
+    margin-left: 38px;
+}
+.save:hover {
+    background-color: #218838;
+}
+.delete {
+    background-color: #dc3545;
+}
+.delete:hover {
+    background-color: #c82333;
+}

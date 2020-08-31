@@ -1,0 +1,28 @@
+h1, h2, h3, h4, h5, h6, p, ol, li, a {
+    font-family: 'Poppins', 'sans-serif'
+}
+.d-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.todo-app {
+    border: 8px solid #0353a4;
+    border-radius: 25px;
+    width: 40%;
+    margin: 120px auto;
+    padding-bottom: 120px;
+}
+.button {
+    border: 0 none transparent;
+    padding: 8px 12px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+}
+.button:hover {
+    transition: 0.1s;
+}
