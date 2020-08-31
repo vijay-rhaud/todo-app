@@ -6,7 +6,7 @@
                     <input
                         class="checkbox"
                         type="checkbox"
-                        @click="completeTask(index, task)"
+                        @click="completeTask(index)"
                         :checked="task.isComplete"
                     >
                 </div>
@@ -32,7 +32,7 @@
                         type="text"
                         :id="index"
                         :value="task.description"
-                        @input="updateTask(index, task)"
+                        @input="updateTask(index)"
                         @keyup.enter="editTask()"
                         maxlength="300"
                     >
@@ -56,11 +56,11 @@ export default {
     },
     props: ['todoList'],
     methods: {
-        updateTask(index, task) {
-            this.$emit('updateTask', index, task);
+        updateTask(index) {
+            this.$emit('updateTask', index);
         },
-        completeTask(index, task) {
-            this.$emit('completeTask', index, task);
+        completeTask(index) {
+            this.$emit('completeTask', index);
         },
         deleteTask(index) {
             this.$emit('deleteTask', index);

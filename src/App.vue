@@ -34,10 +34,10 @@
         }
         this.todoList.push({description: newTask, isComplete: false});
       },
-      updateTask(index, task) {
+      updateTask(index) {
         this.todoList.splice(index, 1, {description: event.target.value, isComplete: false});
       },
-      completeTask(index, task) {
+      completeTask(index) {
         this.todoList[index].isComplete = !this.todoList[index].isComplete
       },      
       deleteTask(index) {
